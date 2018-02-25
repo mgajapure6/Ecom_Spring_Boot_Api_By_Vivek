@@ -5,7 +5,6 @@ import org.springframework.stereotype.Repository;
 
 import com.ecom.common.model.UserModel;
 import java.lang.String;
-import java.util.List;
 
 @Repository
 public interface UserRepository extends CrudRepository<UserModel, Integer> {

@@ -3,6 +3,7 @@ package com.ecom.login.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -13,12 +14,13 @@ import com.ecom.common.model.UserModel;
 import com.ecom.common.repository.UserRepository;
 
 @RestController
-@RequestMapping(value="/api")	
+@RequestMapping(value="/api/user")	
 public class LoginController {
    @Autowired
    UserRepository userRepository;
    
-   @RequestMapping(value="/login", method=RequestMethod.POST)	
+   @CrossOrigin
+   @RequestMapping(value="/userLogin", method=RequestMethod.POST)	
    public CommonResponse getLogin(@RequestBody UserModel userModel) {
 	   String userName = userModel.getUserName();
 	   String currentPassword = userModel.getCurrentPassword();
@@ -30,6 +32,7 @@ public class LoginController {
 	   }
    }
    
+   @CrossOrigin
    @RequestMapping(value="/findAllUser", method=RequestMethod.GET)	
    public CommonResponse findAllUser() {
 	   List<UserModel> userList = (List<UserModel>) userRepository.findAll();

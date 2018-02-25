@@ -19,58 +19,85 @@ public class UserModel {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer userId;
+	
 	@Column
 	private String  operationDate;
+	
 	@Column
 	private Integer opBrachId;
+	
 	@Column
 	private Integer opDeptId;
+	
 	@Column
 	private Integer fkEntityId;
+	
 	@Column(unique=true,nullable=false,length=30)
 	private String  userName;
+	
 	@Column(length=30,nullable=false)
 	private String  userFirstName;
+	
 	@Column(length=30,nullable=false)
 	private String  userLastName;
+	
 	@Column(length=30,nullable=false)
 	private String  currentPassword;
+	
 	@Column(length=30)
 	private String  previousPassword;
+	
 	@Temporal(TemporalType.DATE)
 	private Date  passChangeDate;
+	
 	@Temporal(TemporalType.DATE)
 	private Date  lastLoginDate;
+	
 	@Temporal(TemporalType.DATE)
 	private Date  lastLogoutDate;
+	
 	@Temporal(TemporalType.DATE)
 	private Date  createDate;
+	
 	@Column
 	private Integer fkDeptId;
+	
 	@Column(length=1)
 	private String  employeeFlag;
+	
 	@Column
 	private Integer fkEmpId;
+	
 	@Column(length=50)
 	private String  userStatusDesc;
+	
 	@Column(length=30)
 	private String  email1;
+	
 	@Column(length=30)
 	private String  email2;
+	
 	@Lob
 	private Blob   userPhoto;
+	
 	@Column(length=10)
 	private String mobile1;
+	
 	@Column(length=10)
 	private String mobile2;
+	
 	@Column(length=200)
 	private String address;
+	
 	@Column
 	private Integer operationId;
+	
 	@Column
 	private Integer enterUserId;
+	
 	@Column(length=1,nullable=false)
 	private String  activeFlag;
+	
 	@Column(length=1,nullable=false)
 	private String  deleteFlag;
 	

@@ -1,5 +1,6 @@
 package com.ecom.login.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,9 @@ public class LoginController {
 	   if(userModel==null) {
 		   return new CommonResponse("Data Not Found", 404, null);
 	   }else {
+		   userModel.setLastLoginDate(new Date());
+		   userModel.setOperationDate(new Date().toString());
+		   userModel = userRepository.save(userModel);
 		   return new CommonResponse("Data Found", 200, userModel);
 	   }
    }
